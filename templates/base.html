@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <title>{% block title %}Leave Tracker{% endblock %}</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <nav>
+        <a href="{{ url_for('home') }}">Leave Tracker</a>
+
+        <a href="{{ url_for('employees') }}">Employees</a>
+
+        <a href="{{ url_for('leave_types') }}">Leave Types</a>
+
+        <a href="{{ url_for('leave_requests') }}">Leave Requests</a>
+    </nav>
+
+    <main>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+
+            {% for category, message in messages %}
+                <p class="flash {{ category }}">
+                    {{ message }}
+                </p>
+            {% endfor %}
+
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+</body>
+
+</html>
+

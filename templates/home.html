@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h1>Employee Leave Tracker</h1>
+
+<p>Choose a module:</p>
+
+<ul>
+    <li>
+        <a href="{{ url_for('employees') }}">Employees</a>
+    </li>
+
+    <li>
+        <a href="{{ url_for('leave_types') }}">Leave Types</a>
+    </li>
+
+    <li>
+        <a href="{{ url_for('leave_requests') }}">Leave Requests</a>
+    </li>
+</ul>
+
+{% endblock %}
+

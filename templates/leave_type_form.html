@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Add Leave Type{% endblock %}
+
+{% block content %}
+
+<h1>Add Leave Type</h1>
+
+<form method="post">
+
+    <label>
+        Name
+        <input name="name" required>
+    </label>
+
+    <label>
+        Days Allowed
+        <input
+            name="days_allowed"
+            type="number"
+            min="1"
+            required
+        >
+    </label>
+
+    <label>
+        Description
+        <input name="description" required>
+    </label>
+
+    <button type="submit">Save</button>
+
+</form>
+
+{% endblock %}
+

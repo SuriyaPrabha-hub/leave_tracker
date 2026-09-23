@@ -1,0 +1,56 @@
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ccc;
+}
+
+label {
+    display: block;
+    margin: 12px 0;
+}
+
+input,
+select {
+    display: block;
+    width: 320px;
+    padding: 8px;
+}
+
+button {
+    padding: 7px 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.flash {
+    padding: 10px;
+    background: #dbeafe;
+}
+
+.success {
+    background: #dcfce7;
+}
+
+.error {
+    background: #fee2e2;
+}
+

@@ -1,0 +1,52 @@
+
+{% extends "base.html" %}
+
+{% block title %}Leave Requests{% endblock %}
+
+{% block content %}
+
+<h1>Leave Requests</h1>
+
+<a href="{{ url_for('add_leave_request') }}">
+    Add Leave Request
+</a>
+
+{% if leave_requests %}
+
+<table>
+    <tr>
+        <th>Employee</th>
+        <th>Leave Type</th>
+        <th>Date</th>
+        <th>Action</th>
+    </tr>
+
+    {% for item in leave_requests %}
+
+    <tr>
+        <td>{{ item.employee_name }}</td>
+        <td>{{ item.leave_type_name }}</td>
+        <td>{{ item.leave_date }}</td>
+
+        <td>
+            <form
+                method="post"
+                action="{{ url_for('delete_leave_request', request_id=item.id) }}"
+            >
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% else %}
+
+<p>No leave requests.</p>
+
+{% endif %}
+
+{% endblock %}
+

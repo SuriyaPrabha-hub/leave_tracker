@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+
+{% block title %}Add Leave Request{% endblock %}
+
+{% block content %}
+
+<h1>Add Leave Request</h1>
+
+<form method="post">
+
+    <label>
+        Employee
+
+        <select name="employee_id" required>
+
+            {% for employee in employees %}
+                <option value="{{ employee.id }}">
+                    {{ employee.name }}
+                </option>
+            {% endfor %}
+
+        </select>
+    </label>
+
+    <label>
+        Leave Type
+
+        <select name="leave_type_id" required>
+
+            {% for item in leave_types %}
+                <option value="{{ item.id }}">
+                    {{ item.name }}
+                </option>
+            {% endfor %}
+
+        </select>
+    </label>
+
+    <label>
+        Leave Date
+        <input
+            name="leave_date"
+            type="date"
+            required
+        >
+    </label>
+
+    <button type="submit">Save</button>
+
+</form>
+
+{% endblock %}
+
